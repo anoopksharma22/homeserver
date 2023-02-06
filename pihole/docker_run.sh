@@ -8,7 +8,8 @@ PIHOLE_BASE="${PIHOLE_BASE:-$(pwd)}"
 # Note: FTLCONF_LOCAL_IPV4 should be replaced with your external ip.
 docker run -d \
     --name pihole \
-    -p 53:53/tcp -p 53:53/udp \
+    -p 53:53/tcp \
+    -p 53:53/udp \
     -p 80:80 \
     -e TZ="Asia/Kolkata" \
     -v "${PIHOLE_BASE}/etc-pihole:/etc/pihole" \
@@ -18,7 +19,7 @@ docker run -d \
     --hostname pi.hole \
     -e VIRTUAL_HOST="pi.hole" \
     -e PROXY_LOCATION="pi.hole" \
-    -e FTLCONF_LOCAL_IPV4="192.168.0.158" \
+    -e FTLCONF_LOCAL_IPV4="192.168.1.4" \
     --net=host \
     --cap-add=NET_ADMIN \
     pihole/pihole:latest
