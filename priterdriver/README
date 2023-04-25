@@ -1,0 +1,7 @@
+install samba
+install cups
+modify /etc/cups/cupsd.conf
+modify /etc/samba/smb.conf
+install foomatic-db
+	sudo apt-get install -y foomatic-db
+configure printer from <hostip>:631/admin page
